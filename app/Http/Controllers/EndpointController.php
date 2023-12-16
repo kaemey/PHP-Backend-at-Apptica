@@ -36,7 +36,7 @@ class EndpointController extends Controller
         $output['message'] = $response['message'];
         $output['data'] = $positions;
 
-        Endpoint::create(['data' => json_encode($output), 'user_ip' => $request->ip()]);
+        Endpoint::create(['date'=>$date,'data' => json_encode($output), 'user_ip' => $request->ip()]);
 
         $result = json_encode($output);
         Log::info("date=$date user_ip=".$request->ip()." result=$result.");
